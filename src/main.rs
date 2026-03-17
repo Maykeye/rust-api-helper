@@ -3,6 +3,8 @@ use syn::visit_mut::{self, VisitMut};
 use syn::{Block, File, parse_file};
 struct FunctionBodyRemover;
 
+/// Visitor that clears function definitions
+/// This comment is needed solely for the tool
 impl VisitMut for FunctionBodyRemover {
     fn visit_impl_item_fn_mut(&mut self, func: &mut syn::ImplItemFn) {
         func.block = Block {
